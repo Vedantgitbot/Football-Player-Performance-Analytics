@@ -2,3 +2,4 @@ dash==2.15.0
 plotly==5.20.0
 pandas==2.2.1
 clickhouse-connect==0.6.5
+gunicorn
