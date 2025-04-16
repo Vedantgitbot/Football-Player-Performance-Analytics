@@ -1,7 +1,7 @@
 import pandas as pd
 
 def clean_data():
-    df = pd.read_csv("/Users/vedantbrahmbhatt/Desktop/Players_OLAP/isl_player_final.csv")
+    df = pd.read_csv("/isl_player_final.csv")
     df.columns = [col.strip().lower().replace('.', '_') for col in df.columns]
     df.fillna({
         'events_goals': 0,
