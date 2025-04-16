@@ -1,7 +1,13 @@
 import clickhouse_connect
 from Data_Cleaning import clean_data
 
-client = clickhouse_connect.get_client(host='localhost', port=8123)
+client = clickhouse_connect.get_client(
+    host='your-clickhouse-host.clickhouse.cloud',
+    port=8443,
+    username='your-username',
+    password='your-password',
+    secure=True
+)
 
 def create_table():
     client.command('DROP TABLE IF EXISTS player_stats')
