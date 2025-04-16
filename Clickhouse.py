@@ -1,11 +1,13 @@
 import clickhouse_connect
 from Data_Cleaning import clean_data
 
+import os
+
 client = clickhouse_connect.get_client(
-    host='your-clickhouse-host.clickhouse.cloud',
-    port=8443,
-    username='your-username',
-    password='your-password',
+    host=os.getenv('CLICKHOUSE_HOST'),
+    port=int(os.getenv('CLICKHOUSE_PORT', 8443)),
+    username=os.getenv('CLICKHOUSE_USERNAME'),
+    password=os.getenv('CLICKHOUSE_PASSWORD'),
     secure=True
 )
 
